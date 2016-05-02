@@ -16,6 +16,7 @@
 		<junitQuickcheckCoreVersion>0.6</junitQuickcheckCoreVersion>
 		<jacocoMavenPluginVersion>0.7.6.201602180812</jacocoMavenPluginVersion>
 		<mavenSurefirePluginVersion>2.19.1</mavenSurefirePluginVersion>
+    	<argLine>-Xmx1g</argLine>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -65,6 +66,9 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${mavenSurefirePluginVersion}</version>
+				<configuration>
+					<argLine>@{argLine}</argLine>
+				</configuration>
 			</plugin>
 			<!-- mvn -Dgroups=com.github.alexandrenavarro.test.add.AdderConfig,com.github.alexandrenavarro.test.multiply.MultiplyConfig clean install -->
 			<plugin>
